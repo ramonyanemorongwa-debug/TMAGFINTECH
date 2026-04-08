@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMAG Fintech — Log in</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: var(--black);
+    }
+    .auth-box {
+      width: 100%;
+      max-width: 400px;
+      background: var(--surface);
+      border: 0.5px solid var(--border2);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+    .auth-logo {
+      font-family: var(--font-display);
+      font-size: 24px;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .auth-logo span { color: var(--muted); }
+    .auth-box h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .auth-box > p { font-size: 14px; margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; font-family: var(--font-mono); letter-spacing: 0.06em; }
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--surface2);
+      border: 0.5px solid var(--border2);
+      border-radius: var(--radius);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus { border-color: var(--mid); }
+    .form-group input::placeholder { color: var(--mid); }
+    .auth-btn {
+      width: 100%;
+      padding: 13px;
+      background: var(--white);
+      color: var(--black);
+      border: none;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      font-family: var(--font-body);
+      transition: opacity 0.2s;
+    }
+    .auth-btn:hover { opacity: 0.88; }
+    .auth-footer { text-align: center; margin-top: 1.5rem; font-size: 13px; color: var(--muted); }
+    .auth-footer a { color: var(--light); border-bottom: 0.5px solid var(--border2); }
+    .back-link { display: inline-block; font-size: 13px; color: var(--muted); margin-bottom: 1.5rem; }
+    .back-link:hover { color: var(--white); }
+    .coming-soon-note {
+      background: var(--surface2);
+      border: 0.5px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 1rem;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-box">
+    <a href="index.html" class="back-link">← Back to site</a>
+    <a href="index.html" class="auth-logo">TMAG<span>FINTECH</span></a>
+    <h2>Welcome back</h2>
+    <p>Sign in to your TMAG dashboard.</p>
+
+    <div class="coming-soon-note">
+      🔒 Dashboard access is currently in beta. Join the waitlist for early access.
+    </div>
+
+    <div class="form-group">
+      <label>Email address</label>
+      <input type="email" placeholder="your@email.com" />
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••" />
+    </div>
+    <button class="auth-btn" onclick="alert('Dashboard coming soon! Join the waitlist for early access.')">Sign in →</button>
+
+    <div class="auth-footer">
+      Don't have an account? <a href="index.html#waitlist">Join the waitlist</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

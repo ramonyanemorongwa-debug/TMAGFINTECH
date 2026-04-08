@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMAG Fintech — AI-Powered Financial Intelligence</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">TMAG<span>FINTECH</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#models">Models</a>
+      <a href="#markets">Markets</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="login.html" class="nav-login">Log in</a>
+      <a href="#waitlist" class="nav-cta">Get Early Access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker-track">
+    <span class="tick"><b>SPX</b> 5,248.32 <em class="up">▲ 0.84%</em></span>
+    <span class="tick"><b>NAS100</b> 18,432.10 <em class="up">▲ 1.12%</em></span>
+    <span class="tick"><b>BTC/USD</b> 71,204.50 <em class="dn">▼ 0.37%</em></span>
+    <span class="tick"><b>ETH/USD</b> 3,841.20 <em class="up">▲ 2.15%</em></span>
+    <span class="tick"><b>EUR/USD</b> 1.0842 <em class="dn">▼ 0.14%</em></span>
+    <span class="tick"><b>GBP/USD</b> 1.2731 <em class="up">▲ 0.08%</em></span>
+    <span class="tick"><b>GOLD</b> 2,341.80 <em class="up">▲ 0.22%</em></span>
+    <span class="tick"><b>OIL (WTI)</b> 84.62 <em class="up">▲ 0.61%</em></span>
+    <span class="tick"><b>VIX</b> 13.44 <em class="dn">▼ 1.20%</em></span>
+    <span class="tick"><b>DXY</b> 104.31 <em class="dn">▼ 0.09%</em></span>
+    <span class="tick"><b>TSLA</b> 248.91 <em class="up">▲ 3.41%</em></span>
+    <span class="tick"><b>AAPL</b> 192.50 <em class="up">▲ 0.55%</em></span>
+    <span class="tick"><b>SOL/USD</b> 182.44 <em class="up">▲ 4.22%</em></span>
+    <span class="tick"><b>DOW</b> 39,127.14 <em class="dn">▼ 0.18%</em></span>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow red"></div>
+    <div class="hero-glow blue"></div>
+    <div class="hero-glow green"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span> 5 AI Models · Coming Soon
+      </div>
+      <h1 class="hero-title">
+        THE EDGE<br>
+        <span class="gradient-text">MARKETS DEMAND</span>
+      </h1>
+      <p class="hero-sub">Five specialized AI models engineered for traders and investors. From real-time market analysis to risk enforcement, trade journaling, and education — built for the modern desk.</p>
+      <div class="hero-actions">
+        <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+        <a href="#models" class="btn-ghost">Explore Models ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hnum">5</span><span class="hlabel">AI Models</span></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hnum">24/7</span><span class="hlabel">Monitoring</span></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hnum">100+</span><span class="hlabel">Beta Users</span></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hnum">0ms</span><span class="hlabel">Missed Signals</span></div>
+      </div>
+    </div>
+    <div class="hero-chart-panel">
+      <div class="chart-card" id="hero-chart-card">
+        <div class="chart-card-header">
+          <span class="chart-label">SPX · S&P 500</span>
+          <span class="chart-change up">▲ +0.84%</span>
+        </div>
+        <canvas id="heroChart" height="180"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARKETS SECTION ═══ -->
+<section class="markets-section" id="markets">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Live Market Pulse</span>
+      <h2>Every market. One platform.</h2>
+      <p>TMAG monitors across asset classes — stocks, forex, crypto, indexes, futures and commodities — so your AI models always have the full picture.</p>
+    </div>
+    <div class="market-tabs">
+      <button class="mtab active" data-market="stocks">Stocks</button>
+      <button class="mtab" data-market="forex">Forex</button>
+      <button class="mtab" data-market="crypto">Crypto</button>
+      <button class="mtab" data-market="indexes">Indexes</button>
+      <button class="mtab" data-market="futures">Futures</button>
+    </div>
+    <div class="charts-grid" id="charts-grid">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODELS SECTION ═══ -->
+<section class="models-section" id="models">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The Suite</span>
+      <h2>Five models. One mission.</h2>
+      <p>Each model is purpose-built for a specific layer of the trading workflow. Use one or deploy the full suite.</p>
+    </div>
+    <div class="models-grid">
+
+      <div class="model-card" data-color="red">
+        <div class="model-num">01</div>
+        <div class="model-icon">📊</div>
+        <h3>AI Trading &amp; Operations Assistant</h3>
+        <p>Analyses markets in real time, tracks portfolio performance, enforces your risk rules, and auto-generates comprehensive trading reports.</p>
+        <ul class="model-features">
+          <li>Real-time market analysis</li>
+          <li>Performance tracking dashboard</li>
+          <li>Automated risk rule enforcement</li>
+          <li>Scheduled report generation</li>
+        </ul>
+        <div class="model-status coming-soon">Coming Soon</div>
+      </div>
+
+      <div class="model-card" data-color="blue">
+        <div class="model-num">02</div>
+        <div class="model-icon">📓</div>
+        <h3>Trade Journal AI</h3>
+        <p>Auto-logs every trade with timestamps and context, surfaces hidden performance patterns, and pinpoints recurring mistakes before they compound.</p>
+        <ul class="model-features">
+          <li>Automatic trade logging</li>
+          <li>Pattern &amp; mistake detection</li>
+          <li>Performance insights engine</li>
+          <li>Exportable trade history</li>
+        </ul>
+        <div class="model-status coming-soon">Coming Soon</div>
+      </div>
+
+      <div class="model-card" data-color="green">
+        <div class="model-num">03</div>
+        <div class="model-icon">⚖️</div>
+        <h3>Risk &amp; Execution Assistant</h3>
+        <p>Calculates precise position sizing, enforces per-trade risk limits, and evaluates each trade setup so you never over-expose your capital.</p>
+        <ul class="model-features">
+          <li>Dynamic position sizing</li>
+          <li>Per-trade risk limits</li>
+          <li>Pre-execution evaluation</li>
+          <li>Drawdown protection alerts</li>
+        </ul>
+        <div class="model-status coming-soon">Coming Soon</div>
+      </div>
+
+      <div class="model-card" data-color="amber">
+        <div class="model-num">04</div>
+        <div class="model-icon">🖥️</div>
+        <h3>Desk Assistant</h3>
+        <p>Customises pricing models for your strategy, integrates with your broker and tools, automates workflows, and generates tailored desk reports.</p>
+        <ul class="model-features">
+          <li>Custom pricing model config</li>
+          <li>Broker &amp; tool integration</li>
+          <li>Workflow automation engine</li>
+          <li>Personalised desk reports</li>
+        </ul>
+        <div class="model-status coming-soon">Coming Soon</div>
+      </div>
+
+      <div class="model-card" data-color="purple">
+        <div class="model-num">05</div>
+        <div class="model-icon">🎓</div>
+        <h3>AI Trading Teacher</h3>
+        <p>Guides beginners through trading fundamentals — chart reading, risk concepts, order types, and live market examples — entirely at their own pace.</p>
+        <ul class="model-features">
+          <li>Interactive beginner curriculum</li>
+          <li>Live market examples</li>
+          <li>Progress tracking</li>
+          <li>Q&amp;A with AI tutor</li>
+        </ul>
+        <div class="model-status coming-soon">Coming Soon</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Pricing</span>
+      <h2>Simple, transparent plans.</h2>
+      <p>Start free. Scale as you grow. All plans include early access pricing for waitlist members.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">Free<span>/mo</span></div>
+        <div class="plan-desc">For beginners learning the markets</div>
+        <ul class="plan-features">
+          <li>AI Trading Teacher (full access)</li>
+          <li>Basic Trade Journal</li>
+          <li>10 market charts/day</li>
+          <li>Community access</li>
+        </ul>
+        <a href="#waitlist" class="btn-plan">Join Waitlist</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-name">Trader</div>
+        <div class="plan-price">$49<span>/mo</span></div>
+        <div class="plan-desc">For active traders and analysts</div>
+        <ul class="plan-features">
+          <li>All 5 AI Models</li>
+          <li>Full Trade Journal AI</li>
+          <li>Risk &amp; Execution Assistant</li>
+          <li>Unlimited market data</li>
+          <li>Email reports</li>
+        </ul>
+        <a href="#waitlist" class="btn-plan featured">Get Early Access</a>
+      </div>
+      <div class="pricing-card">
+        <div class="plan-name">Desk Pro</div>
+        <div class="plan-price">$149<span>/mo</span></div>
+        <div class="plan-desc">For professional desks and funds</div>
+        <ul class="plan-features">
+          <li>Everything in Trader</li>
+          <li>Desk Assistant (full)</li>
+          <li>Broker API integration</li>
+          <li>Custom reporting</li>
+          <li>Priority support</li>
+          <li>Multi-user access</li>
+        </ul>
+        <a href="#waitlist" class="btn-plan">Join Waitlist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WAITLIST ═══ -->
+<section class="waitlist-section" id="waitlist">
+  <div class="container">
+    <div class="waitlist-box">
+      <div class="wl-glow"></div>
+      <div class="wl-content">
+        <span class="section-tag">Early Access</span>
+        <h2>Be first in line.</h2>
+        <p>The models are in active development. Join the waitlist and get priority access, launch pricing, and beta invites.</p>
+        <form id="waitlist-form" class="wl-form">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="your@email.com" required />
+          <select name="role">
+            <option value="">I am a...</option>
+            <option value="retail">Retail Trader</option>
+            <option value="professional">Professional Trader</option>
+            <option value="fund">Fund Manager</option>
+            <option value="beginner">Beginner / Student</option>
+            <option value="other">Other</option>
+          </select>
+          <button type="submit" class="btn-primary wl-btn">Reserve My Spot →</button>
+        </form>
+        <div id="wl-success" class="wl-success" style="display:none">
+          <span>✓</span> You're on the list! We'll be in touch soon.
+        </div>
+        <p class="wl-note">No spam. No credit card. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" id="about">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:1rem">TMAG<span>FINTECH</span></div>
+        <p>AI-powered financial intelligence for the next generation of traders.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/tmagfintech?igsh=MTk2OG9hczZkMTIwNQ==" target="_blank">Instagram</a>
+          <a href="#" target="_blank">X / Twitter</a>
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">Discord</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="#">Trading Assistant</a>
+        <a href="#">Trade Journal AI</a>
+        <a href="#">Risk Assistant</a>
+        <a href="#">Desk Assistant</a>
+        <a href="#">AI Teacher</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="mailto:tmagfintech@gmail.com">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Risk Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TMAG Fintech. All rights reserved.</p>
+      <p class="disclaimer">Trading involves significant risk. AI tools do not constitute financial advice.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
